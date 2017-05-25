@@ -1,0 +1,37 @@
+body {
+  background: #193549;
+  margin: 0;
+  text-align: center;  
+  font-family: 'helvetica neue', sans-serif;
+  font-weight: 100;
+  font-size: 40px;
+  color: #fff;
+}
+
+.controls_wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+input {
+  width: 100px;
+}
+
+:root {
+  --spacing: 10px;
+  --blur: 10px;
+  --base: #ffc600;
+}
+
+img {
+  padding: var(--spacing);
+  background: var(--base);
+  filter: blur(var(--blur));
+}
+
+.text--changable {
+  color: var(--base);
+}
