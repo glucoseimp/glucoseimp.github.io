@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Nerds</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,500&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+	<div class="header">
+		<div class="main-header clearfix">
+			<div class="logo">
+				<a href="index.html">
+				<img src="img/logo.png" alt="Nerds" width="139" height="56">
+				</a>
+			</div>
+			<div class="header-nav">
+				<ul>
+					<li>
+						<a href="#">Студия</a>
+					</li>
+					<li>
+						<a href="#">Клиенты</a>
+					</li>
+					<li class="active">
+						<a href="catalog.html">Магазин</a>
+					</li>
+					<li>
+						<a href="#">Контакты</a>
+					</li>
+				</ul>
+			</div>
+			<div class="basket">
+				<a href="#"><i class="icon-basket"></i>Корзина</a>
+			</div>
+		</div>
+		<h2 class="header-title">
+			Добро пожаловать в магазин готовых макетов
+		</h2>
+	</div>
+
+	<div class="inner-container clearfix">
+		<div class="content-column-left">
+			<div class="filters">
+				<div class="filter-value">
+					<h2>Стоимость:</h2>
+					<div class="range-filter">
+						<div class="range-controls">
+							<div class="scale">
+								<div class="bar"></div>
+								<div class="toggle min-toggle"></div>
+								<div class="toggle max-toggle"></div>
+							</div>
+						</div>
+						<div class="price-controls">
+							от <input type="text" class="min-price" value="0">
+							до <input type="text" class="max-price" value="15 000">
+						</div>
+					</div>
+				</div>
+				<div class="net">
+					<form action="/echo" method="post">
+						<fieldset>
+							<legend>Сетка:</legend>
+							<input type="radio" name="net-type" value="adapting" id="adapted-field" checked>
+							<label for="adapted-field">Адаптивная</label><br>
+							<input type="radio" name="net-type" value="fixed" id="fixed-field">
+							<label for="fixed-field">Фиксированная</label><br>
+							<input type="radio" name="net-type" value="rubber" id="rubber-field">
+							<label for="rubber-field">Резиновая</label>
+						</fieldset>		
+					</form>
+				</div>
+				<div class="features">
+					<form action="/echo" method="post">
+						<fieldset>
+							<legend>Особенности:</legend>
+							<input type="checkbox" name="features-type" value="slider" id="slider-field" checked>
+							<label for="slider-field">Слайдер</label><br>
+							<input type="checkbox" name="features-type" value="advantages" id="advantages-field">
+							<label for="advantages-field">Блок преимуществ</label><br>
+							<input type="checkbox" name="features-type" value="news" id="news-field" checked>
+							<label for="news-field">Новости</label><br>
+							<input type="checkbox" name="features-type" value="gallery" id="gallery-field">
+							<label for="gallery-field">Галерея</label><br>
+							<input type="checkbox" name="features-type" value="basket" id="basket-field">
+							<label for="basket-field">Корзина</label>
+						</fieldset>		
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="content-column-right">
+			<div class="sorting clearfix">
+				<h2 class="sorting-title">Сортировать:</h2>
+				<ul>
+					<li><a href="#">по цене</a></li>
+					<li><a href="#">по типу</a></li>
+					<li><a href="#">по функционалу</a></li>
+				</ul>
+				<div class="sorting-icons">
+					<i class="icon-down-dir active"></i>
+					<i class="icon-up-dir"></i>
+				</div>	
+			</div>
+			<div class="shop-items clearfix">
+				<div class="product-item">
+					<img src="img/layout-1.png" width="240" height="240" alt="Интернет-магазин с личным кабинетом">
+					<div class="item-card">
+						<a href="#">
+							<h2 class="item-title">Sunset</h2>
+							<p>Интернет-магазин<br>с личным кабинетом</p>
+							<span class="btn">10 000 р.</span>
+						</a>
+					</div>
+				</div>
+				<div class="product-item">
+					<img src="img/layout-2.png" width="240" height="240" alt="Интернет-магазин с личным кабинетом">
+					<div class="item-card">
+						<a href="#">
+							<h2 class="item-title">Sunset</h2>
+							<p>Интернет-магазин<br>с личным кабинетом</p>
+							<span class="btn">10 000 р.</span>
+						</a>
+					</div>
+				</div>
+				<div class="product-item">
+					<img src="img/layout-3.png" width="240" height="240" alt="Интернет-магазин с личным кабинетом">
+					<div class="item-card">
+						<a href="#">
+							<h2 class="item-title">Sunset</h2>
+							<p>Интернет-магазин<br>с личным кабинетом</p>
+							<span class="btn">10 000 р.</span>
+						</a>
+					</div>
+				</div>
+				<div class="product-item">
+					<img src="img/layout-4.png" width="240" height="240" alt="Интернет-магазин с личным кабинетом">
+					<div class="item-card">
+						<a href="#">
+							<h2 class="item-title">Sunset</h2>
+							<p>Интернет-магазин<br>с личным кабинетом</p>
+							<span class="btn">10 000 р.</span>
+						</a>
+					</div>
+				</div>
+				<div class="product-item">
+					<img src="img/layout-5.png" width="240" height="240" alt="Интернет-магазин с личным кабинетом">
+					<div class="item-card">
+						<a href="#">
+							<h2 class="item-title">Sunset</h2>
+							<p>Интернет-магазин<br>с личным кабинетом</p>
+							<span class="btn">10 000 р.</span>
+						</a>
+					</div>
+				</div>
+				<div class="product-item ">
+					<img src="img/layout-6.png" width="240" height="240" alt="Интернет-магазин с личным кабинетом">
+					<div class="item-card">
+						<a href="#">
+							<h2 class="item-title">Sunset</h2>
+							<p>Интернет-магазин<br>с личным кабинетом</p>
+							<span class="btn">10 000 р.</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="shop-nav">
+					<a href="#" class="btn active">1</a>
+					<a href="#" class="btn">2</a>
+					<a href="#" class="btn">3</a>
+					<a href="#" class="btn btn-next">Следующая</a>
+				</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="map">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d352.3862474331053!2d38.944232955903765!3d45.043395899999986!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40f04f1371a61747%3A0xb65bcfa78a9cfddd!2z0YPQuy4g0JLQvtC70L7QtNC4INCT0L7Qu9C-0LLQsNGC0L7Qs9C-LCAxMDAsINCa0YDQsNGB0L3QvtC00LDRgCwg0JrRgNCw0YHQvdC-0LTQsNGA0YHQutC40Lkg0LrRgNCw0LksINCg0L7RgdGB0LjRjywgMzUwMDA0!5e0!3m2!1sru!2sua!4v1467892304100" width="100%" height="418" style="border:0" class="map-field" allowfullscreen></iframe>
+			<div class="map-info">
+				<h2 class="info-title"><span>Nёrds</span> design studio</h2>
+				<p>350000, Краснодар, ул.Головатого, 100</p>
+				<p>тел. +7 (861) 275-75-75</p>
+				<a href="#" class="btn write-us">Напишите нам</a>
+			</div>
+		</div>
+		<div class="footer-socials clearfix">
+			<div class="socials-icons">
+				<a href="#" class="btn"><i class="icon-vk"></i></a>
+				<a href="#" class="btn"><i class="icon-facebook"></i></a>
+				<a href="#" class="btn">
+					<i class="icon-instagramm"></i>
+				</a>
+			</div>
+			<div class="sales">
+				<h2 class="sales-title">Давайте дружить, это выгодно!</h2>
+				<p>Скидка 10% для друзей из социальных сетей.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-content">
+		<form action="/echo" method="post">
+			<span>Ваше имя:<br>
+				<input type="text" name="user-name" placeholder="Представьтесь, пожалуйста">
+			</span>
+			<span>Ваш e-mail:<br>
+				<input type="email" name="user-email" placeholder="Для отправки ответа">
+			</span><br>
+			<span>Текст письма:<br>
+				<textarea name="comment" rows="4" placeholder="В свободной форме"></textarea>
+			</span><br>
+			<input type="submit" class="btn" value="Отправить">
+			<div class="btn btn-close">Отмена</div>
+		</form>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
