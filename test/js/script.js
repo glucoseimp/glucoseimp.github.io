@@ -67,14 +67,14 @@ function roomerAction(e) {
 	e.preventDefault();
 	if (this.parentNode.classList.contains('modal--busy')) {
 		this.parentNode.parentNode.classList.remove('busy');
-		this.parentNode.innerHTML = `<div class="modal">
+		this.parentNode.innerHTML = `<div class="modal modal--free">
 										<p>Номер подготовлен к заселению</p>
 										<a href="#" class="btn">Заселить жильца</a>
 									</div>`;
 		localStorage.setItem('roomList', roomList.innerHTML);
 	} else {
 		this.parentNode.parentNode.classList.add('busy');
-		this.parentNode.innerHTML = `<div class="modal">
+		this.parentNode.innerHTML = `<div class="modal modal--busy">
 										<a href="#" class="btn">Выселить жильца</a>
 									</div>`;
 		localStorage.setItem('roomList', roomList.innerHTML);
