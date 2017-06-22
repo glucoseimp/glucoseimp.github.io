@@ -1,6 +1,8 @@
-const roomerArray = ['Abbigail Farrell',
+const roomerArray = [{name:'Abbigail Farrell', birth:'1962'},
 					 {name:'Pablo Wunsch', birth:'1982'},
 					 {name:'Randi Stehr', birth:'1975'},
+					 {name:'Abbigail Farrell', birth:'1973'},
+					 {name:'Abbigail Farrell', birth:'1973'},
 					 {name:'Abbigail Farrell', birth:'1973'},
 					 {name:'Abbigail Farrell', birth:'1973'},
 					 {name:'Abbigail Farrell', birth:'1973'}];
@@ -25,17 +27,13 @@ function createRooms(rooms = [], roomList) {
 	rooms = rooms.map((room, i) => {
 							return i <= 6 ? room += ' room--lux' :
 								   i > 7 && i <= 11 ? room +=' room--eco' :
-								   room;
+								   room += ' room--stand';
 						}).sort(randomPos);
 	roomList.innerHTML = localStorage.getItem('roomList') || 
 						rooms.map(room => populateRooms(room))
 						.map(el => {
 							return el.search(/busy/g) != -1 ?
-								`<div class='${el}'>
-									<div class="modal modal--busy">
-										<a href="#" class="btn">Выселить жильца</a>
-									</div>
-								</div>` : 
+								`<div class='${el}'><div class="modal modal--busy"><a href="#" class="btn">Выселить жильца</a></div></div>` : 
 								`<div class='${el}'>
 									<div class="modal modal--free">
 										<p>Номер подготовлен к заселению</p>
@@ -61,6 +59,14 @@ function populateRooms(el) {
 }
 window.onload = addRooms(rooms);
 
+const busyRoomsList = document.querySelectorAll('.busy');
+
+busyRoomsList.forEach((room, i) => {
+	room.childNodes[0].innerHTML = `<p>Здесь проживает ${roomerArray[i].name}</p>
+								 <a href="#" class="btn">Выселить жильца</a>`;
+	localStorage.setItem('roomList', roomList.innerHTML);
+});
+
 const buttons = document.querySelectorAll('.btn');
 
 function roomerAction(e) {
@@ -71,22 +77,53 @@ function roomerAction(e) {
 										<p>Номер подготовлен к заселению</p>
 										<a href="#" class="btn">Заселить жильца</a>
 									</div>`;
-		localStorage.setItem('roomList', roomList.innerHTML);
 	} else {
 		this.parentNode.parentNode.classList.add('busy');
 		this.parentNode.innerHTML = `<div class="modal modal--busy">
 										<a href="#" class="btn">Выселить жильца</a>
 									</div>`;
-		localStorage.setItem('roomList', roomList.innerHTML);
 	}
+	localStorage.setItem('roomList', roomList.innerHTML);
 }
 
 buttons.forEach(btn => btn.addEventListener('click', roomerAction));
 
-const busyRoomsList = document.querySelectorAll('.busy');
 
-busyRoomsList.forEach((room, i) => {
-	room.childNodes[0].innerHTML = `<p>Здесь проживает ${roomerArray[i]}</p>
-								 <a href="#" class="btn">Выселить жильца</a>`;
-	localStorage.setItem('roomList', roomList.innerHTML);
-})
+const roomsLevel = document.querySelectorAll('[type=radio]');
+const allRooms = document.querySelectorAll('.room');
+const standRooms = document.querySelectorAll('.room--stand');
+const luxLevel = document.querySelectorAll('.room--lux');
+const econLevel = document.querySelectorAll('.room--eco');
+
+function chooseLevel() {
+	roomsLevel.forEach(level => level.checked = false);
+	this.checked = true;
+	allRooms.forEach(room => room.style.display = 'none');
+	switch(this.id) {
+		case 'lux': return luxLevel.forEach(room => room.style.display = 'flex');
+		case 'econ': return econLevel.forEach(room => room.style.display = 'flex');
+		case 'stand': return standRooms.forEach(room => room.style.display = 'flex');
+		default: return allRooms.forEach(room => room.style.display = 'flex');
+	}
+	console.log(this.id)
+}
+
+roomsLevel.forEach(level => level.addEventListener('change', chooseLevel));
+
+const roomPopulating = document.querySelectorAll('[type=checkbox]');
+
+function chooseType() {
+	if (this.id == 'free' && this.checked == true) {
+		allRooms.forEach(room => room.style.display = 'flex');
+		busyRoomsList.forEach(room => room.style.display = 'none');
+	} else if (this.id == 'busy' && this.checked == true) {
+		allRooms.forEach(room => room.style.display = 'none');
+		busyRoomsList.forEach(room => room.style.display = 'flex');
+	} else if (roomPopulating.forEach(level => level.checked == true)) {
+		allRooms.forEach(room => room.style.display = 'flex');
+	} else {
+		allRooms.forEach(room => room.style.display = 'none');
+	}
+}
+
+roomPopulating.forEach(type => type.addEventListener('change', chooseType));
