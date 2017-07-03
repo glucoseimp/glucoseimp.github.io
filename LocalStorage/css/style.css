@@ -1,0 +1,79 @@
+html {
+  box-sizing: border-box;
+  background:url('http://wes.io/hx9M/oh-la-la.jpg') center no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+*, *:before, *:after {box-sizing: inherit; }
+
+svg {
+  fill: #fff;
+  width: 200px;
+  background: rgba(0,0,0,0.1);
+  padding: 20px;
+  border-radius: 50%;
+  margin-bottom: 50px;
+}
+
+.list__wrapper {
+  max-width: 350px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {  
+  margin: 0;
+  margin-bottom: 20px;
+  font-weight: 200;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.plates {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.plates li {
+  display: flex;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  padding: 10px 0;
+  font-weight: 100;
+}
+
+.plates input {
+  display: none;
+}
+
+.plates label {
+  flex: 1;
+  cursor: pointer;
+}
+
+.plates label::before {
+  content: '⬜️';
+  padding-right: 10px;
+}
+
+.plates input:checked + label:before {
+  content: '🌮';
+}
+
+.adding {
+  margin-top: 20px;
+}
+
+.adding input {
+  padding: 10px;
+  outline: none;
+  border:1px solid rgba(0,0,0,0.1);
+}
